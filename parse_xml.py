@@ -35,5 +35,11 @@ def get_all_info(url):
 if __name__ == '__main__':
     info = get_all_info('http://wits.worldbank.org/API/V1/wits/datasource/tradestats-trade/indicator/ALL?format=JSON')
 
-print(info)
+    print(info)
 
+# For the country data availability http://wits.worldbank.org/API/V1/wits/datasource/tradestats-trade/dataavailability/
+
+aval_country = get_all_info('http://wits.worldbank.org/API/V1/wits/datasource/tradestats-trade/dataavailability/')['iso3Code']
+
+list_country = set(aval_country)
+'USA' in list_country
